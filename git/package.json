@@ -2,12 +2,16 @@
   "name": "git",
   "version": "1.0.0",
   "description": "",
-  "main": "set-user.js",
+  "main": "index.js",
+  "preferGlobal": true,
+  "engines": {
+    "node": "*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bind": {
-    "set-git-user": "./set-user.js"
+  "bin": {
+    "setgit": "./index.js"
   },
   "author": "",
   "license": "ISC"
