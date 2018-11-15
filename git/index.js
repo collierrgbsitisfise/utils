@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+const fs = require('fs');
 const {
   exec
 } = require('child_process');
@@ -13,21 +14,39 @@ const {
   email
 } = accountsData[account] || accountsData['home'];
 
-exec(`git config --global user.name "${username}"`, (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec set username error: ${error}`);
-    return;
+const set = () => {
+  exec(`git config --global user.name "${username}"`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec set username error: ${error}`);
+      return;
+    }
+
+    console.log('set username: done');
+  });
+
+
+  exec(`git config --global user.email "${email}"`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec set email error: ${error}`);
+      return;
+    }
+
+    console.log('set email: done');
+  });
+}
+
+const add = (username, email, key) => {
+  const data = {
+    ...accountsData,
+    key: {
+      username,
+      email
+    }
   }
 
-  console.log('set username: done');
-});
+  fs.writeFileSync('git.user.json', JOSN.stringfy(data));
+}
 
-
-exec(`git config --global user.email "${email}"`, (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec set email error: ${error}`);
-    return;
-  }
-
-  console.log('set email: done');
-});
+const getAll = (key) => {
+  fs.writeFileSync()
+}
