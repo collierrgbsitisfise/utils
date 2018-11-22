@@ -1,14 +1,18 @@
+const {
+  showAll
+} = require('./utils/showAll');
+
 exports.commands = {
   add: () => {
-    console.log('add');
+    return 'add';
   },
   set: () => {
-    console.log('set');
+    return 'set';
   },
   delete: () => {
-    console.log('delete');
+    return 'delete';
   },
   showAll: () => {
-    console.log('show all');
+    return showAll();
   }
 }
