@@ -12,7 +12,7 @@ const accountsData = require("./git.users.json");
 const args = process.argv.slice(2) || [];
 
 const doIt = commands[args.shift()] || (() => 'incorrect key');
-console.log(doIt());
+doIt(process.argv);
 // const args = args.shift();
 
 // const {
