@@ -14,7 +14,7 @@ const {
 } = require('minimist')(process.argv.slice(2)) || [];
 
 const doIt = commands[_.shift()] || (() => 'incorrect key');
-doIt(process.argv);
+doIt(require('minimist')(process.argv.slice(2)));
 
 // const args = args.shift();
 
