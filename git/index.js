@@ -9,10 +9,13 @@ const {
   exec
 } = require("child_process");
 const accountsData = require("./git.users.json");
-const args = process.argv.slice(2) || [];
+const {
+  _,
+} = require('minimist')(process.argv.slice(2)) || [];
 
-const doIt = commands[args.shift()] || (() => 'incorrect key');
+const doIt = commands[_.shift()] || (() => 'incorrect key');
 doIt(process.argv);
+
 // const args = args.shift();
 
 // const {
