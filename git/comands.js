@@ -8,6 +8,10 @@ const {
   add
 } = require('./utils/add');
 
+const {
+  deleteByKey
+} = require('./utils/delete.js');
+
 exports.commands = {
   add: (args) => {
 
@@ -46,8 +50,11 @@ exports.commands = {
   }) => {
     return set(_.pop());
   },
-  delete: () => {
-    return 'delete';
+  delete: (args) => {
+    const {
+      k //key
+    } = args;
+    deleteByKey(k)
   },
   showAll: () => {
     return showAll();
