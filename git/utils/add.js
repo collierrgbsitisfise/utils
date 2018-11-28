@@ -6,10 +6,6 @@ exports.add = function ({
   username,
   key
 }) {
-  console.log('add new user');
-  console.log(email);
-  console.log(username);
-  console.log(key);
   const data = JSON.parse(String(fs.readFileSync(path.resolve('git.users.json'))));
 
   const newData = JSON.stringify({
