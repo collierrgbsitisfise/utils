@@ -25,7 +25,7 @@ exports.set = function set(key) {
         return;
       }
 
-      console.log("set username: done");
+      console.log(`set username: ${username}`);
     }
   );
 
@@ -35,6 +35,6 @@ exports.set = function set(key) {
       return;
     }
 
-    console.log("set email: done");
+    console.log(`set email: ${email}`);
   });
 }
