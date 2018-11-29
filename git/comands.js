@@ -10,7 +10,11 @@ const {
 
 const {
   deleteByKey
-} = require('./utils/delete.js');
+} = require('./utils/delete');
+
+const {
+  getCurrent
+} = require('./utils/getCurrent');
 
 exports.commands = {
   add: (args) => {
@@ -58,5 +62,8 @@ exports.commands = {
   },
   showAll: () => {
     return showAll();
+  },
+  current: () => {
+    return getCurrent();
   }
 }
