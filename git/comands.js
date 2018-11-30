@@ -1,20 +1,10 @@
 const {
-  showAll
-} = require('./utils/showAll');
-const {
-  set
-} = require('./utils/set');
-const {
-  add
-} = require('./utils/add');
-
-const {
-  deleteByKey
-} = require('./utils/delete');
-
-const {
+  showAll,
+  set,
+  add,
+  deleteByKey,
   getCurrent
-} = require('./utils/getCurrent');
+} = require('./utils');
 
 exports.commands = {
   add: (args) => {
