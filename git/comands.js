@@ -7,7 +7,7 @@ const {
 } = require('./utils');
 
 exports.commands = {
-  add: (args) => {
+  add: async (args) => {
 
     const {
       u, //username
@@ -33,7 +33,7 @@ exports.commands = {
       return;
     }
 
-    return add({
+    return await add({
       email: e,
       username: u,
       key: k
