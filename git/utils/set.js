@@ -5,7 +5,9 @@ const {
 } = require("child_process");
 
 exports.set = function set(key) {
-  const data = JSON.parse(String(fs.readFileSync(path.resolve('git.users.json'))));
+  const data = JSON.parse(String(fs.readFileSync(
+    path.resolve(path.resolve(__dirname, '../', 'git.users.json'))
+  )));
 
   if (!data[key]) {
     console.log(`not found credentials by key ${key}`);
